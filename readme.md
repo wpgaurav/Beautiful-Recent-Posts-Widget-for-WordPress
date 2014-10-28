@@ -1,13 +1,12 @@
 Beautiful Recent Posts Widget
 ==================================
-Contributors: gauravtiwari
-Donate link: http://gauravtiwari.org/donate/
-Tags: widget
-Requires at least: 3.5
-Tested up to: 4.0
-Stable Tag: 4.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Contributors: gauravtiwari
+* Donate link: http://gauravtiwari.org/donate/
+* Tags: widget
+* Requires at least: 3.5
+*  Tested up to: 4.0
+* License: GPLv2 or later
+*  License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Beautiful Recent Posts Widget (BRPW) is a clean minimal sidebar widget to showcase your recent articles in a clean & beautiful way.
 
