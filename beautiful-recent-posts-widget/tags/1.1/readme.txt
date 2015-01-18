@@ -1,7 +1,7 @@
 === Beautiful Recent Posts Widget ===
 Contributors: gauravtiwari
 Donate link: http://gauravtiwari.org/donate/
-Tags: widget
+Tags: widget, posts, sidebar
 Requires at least: 3.5
 Tested up to: 4.1
 Stable Tag: 1.1

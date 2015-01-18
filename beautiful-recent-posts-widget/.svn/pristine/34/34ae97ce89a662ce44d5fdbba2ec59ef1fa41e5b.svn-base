@@ -3,8 +3,8 @@ Contributors: gauravtiwari
 Donate link: http://gauravtiwari.org/donate/
 Tags: widget
 Requires at least: 3.5
-Tested up to: 4.1
-Stable Tag: 1.1
+Tested up to: 4.0
+Stable Tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,10 +13,10 @@ Beautiful Recent Posts Widget (BRPW) is a clean minimal sidebar widget to showca
 == Description ==
 
 * Lightweight – Just 5kB in size.
-* Tested on WordPress 3.5+ // WordPress 4.1 recommended.
+* Tested on WordPress 3.5+ // WordPress 4.0 recommended.
 * Customize the way you want.
 * Link to one of your blog pages.
-* Free support and future updates at [personal blog](http://gauravtiwari.org/ "Gaurav Tiwari")
+* Free support and future updates at [personal blog](http://gauravtiwari.org/question-hub/ "Q&A")
 
 == Installation ==
 
@@ -27,7 +27,6 @@ Beautiful Recent Posts Widget (BRPW) is a clean minimal sidebar widget to showca
 
 
 == Changelog ==
-= 1.1 =
-* Minified CSS & performance improvements.
+
 = 1.0 =
 * Initial Release
