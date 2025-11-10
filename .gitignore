@@ -1,36 +1,105 @@
-# Windows image file caches
+# =========================
+# Operating System Files
+# =========================
+
+# Windows
 Thumbs.db
 ehthumbs.db
-
-# Folder config file
 Desktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
 
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Icon must ends with two \r.
-Icon
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+# =========================
+# Version Control
+# =========================
+
+.svn/
+.hg/
+.bzr/
+
+# =========================
+# IDEs and Editors
+# =========================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PhpStorm / IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# =========================
+# Development
+# =========================
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+vendor/
+composer.lock
+
+# Build files
+*.map
+*.min.js
+*.min.css
+
+# =========================
+# WordPress
+# =========================
+
+# WordPress core files (if included accidentally)
+/wp-admin/
+/wp-includes/
+/wp-content/
+
+# WordPress config
+wp-config.php
+wp-config-local.php
+
+# Log files
+*.log
+error_log
+debug.log
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Backup files
+*.bak
+*.backup
+*.old
