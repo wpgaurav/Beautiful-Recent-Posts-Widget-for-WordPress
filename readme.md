@@ -3,7 +3,7 @@
 A beautiful and minimal WordPress widget to showcase your recent articles with featured images.
 
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
-[![WordPress](https://img.shields.io/badge/wordpress-5.0%2B-blue.svg)](https://wordpress.org/)
+[![WordPress](https://img.shields.io/badge/wordpress-5.0%2B-blue.svg)](https://wordpress.org/) [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?style=flat&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/gauravtiwari)
 
 ## Description
 
@@ -61,6 +61,16 @@ Beautiful Recent Posts Widget (BRPW) is a clean, minimal sidebar widget that dis
 
 ### 1.0
 * Initial release
+
+## Support This Project
+
+This widget is free and open source under the GPL and shows your recent WordPress posts in the sidebar with featured images, dates and comment counts. For version 4.1 I updated the code to current WordPress coding standards and made its CSS load only on pages where the widget appears.
+
+If the widget gave your sidebar a recent posts list with thumbnails and a Read More button, you can buy me a coffee.
+
+<a href="https://buymeacoffee.com/gauravtiwari"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" height="50"></a>
+
+I'd welcome a star, and an issue that lists your WordPress version, PHP version, theme and the steps that break the widget gives me what I need to reproduce the problem.
 
 ## Credits
 
