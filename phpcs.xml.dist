@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="Beautiful Recent Posts">
+  <description>WordPress standards with the published legacy filename preserved.</description>
+  <file>BRPWidget.php</file>
+  <file>beautiful-recent-posts-widget.php</file>
+  <file>includes</file>
+  <file>blocks/recent-posts/render.php</file>
+  <rule ref="WordPress" />
+  <rule ref="WordPress.Files.FileName">
+    <exclude-pattern>*/BRPWidget.php</exclude-pattern>
+  </rule>
+</ruleset>

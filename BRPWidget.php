@@ -1,5 +1,4 @@
 <?php
-// phpcs:disable WordPress.Files.FileName -- Keep the original WordPress.org entry point for upgrades.
 /**
  * Plugin Name: Beautiful Recent Posts Widget
  * Plugin URI: https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress
