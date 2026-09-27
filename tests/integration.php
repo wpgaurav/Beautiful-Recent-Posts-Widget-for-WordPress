@@ -26,6 +26,34 @@ try {
 	brpw_expect( 7 === $legacy['totalnews'] && $legacy['show_date'] && $legacy['show_comments'] && 'circle' === $legacy['image_shape'], '4.1 settings retain display defaults' );
 	$bad = brpw_settings( array( 'title' => '<script>bad</script>Title', 'totalnews' => 999999, 'layout' => '"><script>', 'show_date' => 'false', 'excerpt_length' => 9999, 'category' => array( 1 ), 'orderby' => 'rand' ) );
 	brpw_expect( 20 === $bad['totalnews'] && 60 === $bad['excerpt_length'] && 'list' === $bad['layout'] && 'date' === $bad['orderby'] && 0 === $bad['category'] && false === $bad['show_date'] && false === strpos( $bad['title'], '<' ), 'hostile settings are bounded and sanitized' );
+
+	$plugin_basename = plugin_basename( WP_PLUGIN_DIR . '/beautiful-recent-posts-widget/BRPWidget.php' );
+	$old_basename = dirname( $plugin_basename ) . '/beautiful-recent-posts-widget.php';
+	$registered_plugins = get_plugins( '/beautiful-recent-posts-widget' );
+	brpw_expect( array( 'BRPWidget.php' ) === array_keys( $registered_plugins ), 'only the original directory entry point appears in the plugin list' );
+	$original_active = get_option( 'active_plugins', array() );
+	try {
+		update_option( 'active_plugins', array( 'unrelated/plugin.php', $old_basename ) );
+		brpw_migrate_activation_path();
+		brpw_expect( array( 'unrelated/plugin.php', $plugin_basename ) === get_option( 'active_plugins' ), 'GitHub 4.x activation migrates without changing unrelated entries' );
+		brpw_migrate_activation_path();
+		brpw_expect( array( 'unrelated/plugin.php', $plugin_basename ) === get_option( 'active_plugins' ), 'activation migration is idempotent' );
+	} finally {
+		update_option( 'active_plugins', $original_active );
+	}
+
+	if ( is_multisite() ) {
+		$original_network = get_site_option( 'active_sitewide_plugins', array() );
+		try {
+			update_site_option( 'active_sitewide_plugins', array( 'unrelated/plugin.php' => 123, $old_basename => 456 ) );
+			brpw_migrate_activation_path();
+			brpw_expect( array( 'unrelated/plugin.php' => 123, $plugin_basename => 456 ) === get_site_option( 'active_sitewide_plugins' ), 'network activation migration preserves timestamps and unrelated plugins' );
+			brpw_migrate_activation_path();
+			brpw_expect( array( 'unrelated/plugin.php' => 123, $plugin_basename => 456 ) === get_site_option( 'active_sitewide_plugins' ), 'network activation migration is idempotent' );
+		} finally {
+			update_site_option( 'active_sitewide_plugins', $original_network );
+		}
+	}
 	$widget = new BRP_Widget();
 	brpw_expect( 'brp_widget' === $widget->id_base, 'legacy widget ID is unchanged' );
 	$saved = $widget->update( array( 'title' => 'New' ), array() );

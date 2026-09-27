@@ -7,7 +7,7 @@ import zipfile
 SLUG = 'beautiful-recent-posts-widget'
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
-    f'{SLUG}.php', 'readme.txt', 'LICENSE', 'includes/render.php',
+    'BRPWidget.php', f'{SLUG}.php', 'readme.txt', 'LICENSE', 'includes/render.php',
     'includes/class-brp-widget.php', 'blocks/recent-posts/block.json',
     'blocks/recent-posts/editor.js', 'blocks/recent-posts/render.php', 'css/brpw.css',
 )
@@ -17,7 +17,7 @@ def build(root=ROOT):
     version = re.search(r"define\( 'BRPW_VERSION', '([^']+)'", (root / f'{SLUG}.php').read_text()).group(1)
     if not re.fullmatch(r'\d+\.\d+\.\d+(?:-(?:alpha|beta|rc)\.\d+)?', version):
         raise ValueError('Invalid package version')
-    files = [root / name for name in (f'{SLUG}.php', 'readme.txt', 'LICENSE')]
+    files = [root / name for name in ('BRPWidget.php', f'{SLUG}.php', 'readme.txt', 'LICENSE')]
     for directory in ('includes', 'blocks', 'css', 'languages'):
         folder = root / directory
         if folder.exists():

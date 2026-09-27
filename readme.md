@@ -15,7 +15,7 @@ Give your next great read a place to shine. A lightweight WordPress plugin with 
 - Native responsive images, semantic dates, keyboard focus styles and RTL layouts.
 - Server-rendered output with no frontend JavaScript, tracking, remote services or external fonts.
 
-The original `BRP_Widget` class, `brp_widget` ID and four original settings are preserved. Existing widgets keep their default display choices. CSS has changed, so check theme overrides on staging. The translation domain now matches the plugin slug; custom `brpw` translations need to be migrated to `beautiful-recent-posts-widget`.
+The directory's original `BRPWidget.php` entry point is retained; activation of the GitHub-only 4.x filename migrates automatically. The original `BRP_Widget` class, `brp_widget` ID and four original settings are preserved. Existing widgets keep their default display choices. CSS has changed, so check theme overrides on staging. The translation domain now matches the plugin slug; custom `brpw` translations need to be migrated to `beautiful-recent-posts-widget`.
 
 ## Use it
 

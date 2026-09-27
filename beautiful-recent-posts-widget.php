@@ -1,16 +1,6 @@
 <?php
 /**
- * Plugin Name: Beautiful Recent Posts Widget
- * Plugin URI: https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress
- * Version: 5.0.0
- * Description: Give your next great read a place to shine. Recent posts with thumbnails, flexible layouts, a block, and a classic widget.
- * Author: Gaurav Tiwari
- * Author URI: https://gauravtiwari.org
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: beautiful-recent-posts-widget
- * Requires at least: 6.6
- * Requires PHP: 7.4
+ * Plugin bootstrap and compatibility entry point for GitHub versions 4.x.
  *
  * @package BeautifulRecentPosts
  */
@@ -56,3 +46,35 @@ function brpw_enqueue_widget_style() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'brpw_enqueue_widget_style' );
+
+/**
+ * Preserve activation for installations of the 4.x GitHub-only filename.
+ *
+ * The directory's original BRPWidget.php remains the canonical plugin header.
+ * This runs before WordPress validates active plugin headers in wp-admin.
+ */
+function brpw_migrate_activation_path() {
+	$previous = plugin_basename( __FILE__ );
+	$current  = plugin_basename( __DIR__ . '/BRPWidget.php' );
+	$active   = get_option( 'active_plugins', array() );
+	if ( is_array( $active ) && in_array( $previous, $active, true ) ) {
+		foreach ( $active as &$plugin ) {
+			if ( $previous === $plugin ) {
+				$plugin = $current;
+			}
+		}
+		unset( $plugin );
+		update_option( 'active_plugins', array_values( array_unique( $active ) ) );
+	}
+	if ( is_multisite() ) {
+		$network = get_site_option( 'active_sitewide_plugins', array() );
+		if ( is_array( $network ) && isset( $network[ $previous ] ) ) {
+			if ( ! isset( $network[ $current ] ) ) {
+				$network[ $current ] = $network[ $previous ];
+			}
+			unset( $network[ $previous ] );
+			update_site_option( 'active_sitewide_plugins', $network );
+		}
+	}
+}
+add_action( 'plugins_loaded', 'brpw_migrate_activation_path', 1 );

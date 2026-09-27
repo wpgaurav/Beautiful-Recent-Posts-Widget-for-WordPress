@@ -23,8 +23,8 @@ GitHub uploads use the job's short-lived `GITHUB_TOKEN`. No personal access toke
 
 Keep these values identical:
 
-1. Main PHP header `Version:`.
-2. Main PHP `BRPW_VERSION` constant.
+1. `BRPWidget.php` header `Version:` (the original WordPress.org entry point).
+2. `beautiful-recent-posts-widget.php` bootstrap `BRPW_VERSION` constant.
 3. `readme.txt` `Stable tag:` and the new changelog heading.
 4. `blocks/recent-posts/block.json` version.
 5. `package.json` version.

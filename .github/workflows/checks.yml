@@ -47,9 +47,14 @@ jobs:
       matrix:
         php: ['7.4', '8.2', '8.3', '8.4', '8.5']
         wordpress: ['latest']
+        multisite: [false]
         include:
           - php: '7.4'
             wordpress: '6.6'
+            multisite: false
+          - php: '8.5'
+            wordpress: 'latest'
+            multisite: true
     steps:
       - uses: actions/checkout@v4
         with:
@@ -63,12 +68,19 @@ jobs:
       - name: Lint PHP
         run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l
       - name: Install disposable WordPress
+        env:
+          MULTISITE: ${{ matrix.multisite }}
         run: |
           mkdir /tmp/brpw-wordpress
           wp core download --path=/tmp/brpw-wordpress --version=${{ matrix.wordpress }}
           wp config create --path=/tmp/brpw-wordpress --dbname=wordpress --dbuser=root --dbpass=wordpress --dbhost=127.0.0.1:3306
           wp core install --path=/tmp/brpw-wordpress --url=http://localhost --title=BRPW --admin_user=admin --admin_password=local-ci-only --admin_email=qa@example.org --skip-email
           python3 scripts/package.py
-          wp plugin install "$GITHUB_WORKSPACE"/dist/beautiful-recent-posts-widget-*.zip --activate --path=/tmp/brpw-wordpress
+          if [[ "$MULTISITE" == true ]]; then
+            wp core multisite-convert --path=/tmp/brpw-wordpress
+            wp plugin install "$GITHUB_WORKSPACE"/dist/beautiful-recent-posts-widget-*.zip --activate-network --path=/tmp/brpw-wordpress
+          else
+            wp plugin install "$GITHUB_WORKSPACE"/dist/beautiful-recent-posts-widget-*.zip --activate --path=/tmp/brpw-wordpress
+          fi
       - name: Integration tests
         run: wp eval-file "$GITHUB_WORKSPACE/tests/integration.php" --path=/tmp/brpw-wordpress

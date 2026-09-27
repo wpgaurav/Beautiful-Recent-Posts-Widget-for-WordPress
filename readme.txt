@@ -68,7 +68,8 @@ Sorting uses the last-modified date. The displayed date remains the original pub
 * New teal editorial branding, SVG icon, and standard/retina directory banners.
 * Added a native block, shortcode, list/card layouts, category and ordering controls.
 * Added optional author, excerpt, thumbnail shape, metadata, and current-post exclusion.
-* Preserved saved classic widget IDs and original settings.
+* Preserved the original WordPress.org plugin filename, saved classic widget IDs and original settings.
+* Migrates activation from the GitHub-only 4.x filename on single-site and multisite installations.
 * Replaced unused data-retina markup with native responsive images.
 * Bounded and sanitized settings; excluded private and password-protected content.
 * Added PHP integration tests, JavaScript checks, CI, and reproducible ZIP packaging.

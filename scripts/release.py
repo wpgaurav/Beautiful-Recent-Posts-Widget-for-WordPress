@@ -25,12 +25,13 @@ def field(text, name):
 
 
 def versions(root, tag=None, source=True):
-    main = (root / f'{SLUG}.php').read_text()
+    main = (root / 'BRPWidget.php').read_text()
+    bootstrap = (root / f'{SLUG}.php').read_text()
     readme = (root / 'readme.txt').read_text()
     version = field(main, 'Version')
     if not re.fullmatch(VERSION_PATTERN, version):
         raise ValueError(f'Unsupported version: {version}')
-    constant = re.search(r"define\(\s*'BRPW_VERSION',\s*'([^']+)'", main)
+    constant = re.search(r"define\(\s*'BRPW_VERSION',\s*'([^']+)'", bootstrap)
     found = {
         'constant': constant[1] if constant else '',
         'readme stable tag': field(readme, 'Stable tag'),
