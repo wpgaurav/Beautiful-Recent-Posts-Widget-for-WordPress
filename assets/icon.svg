@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="icon-title icon-desc">
+<title id="icon-title">Beautiful Recent Posts</title><desc id="icon-desc">Three editorial rows on a deep teal tile, with the newest story highlighted in warm yellow.</desc>
+<rect width="256" height="256" rx="52" fill="#123f3a"/>
+<g id="editorial-list">
+<rect x="44" y="48" width="52" height="52" rx="12" fill="#f1cc76"/>
+<path d="M117 57h91M117 78h65" fill="none" stroke="#faf7ef" stroke-width="12" stroke-linecap="round"/>
+<rect x="44" y="119" width="36" height="36" rx="8" fill="#a9c8bb"/>
+<path d="M101 127h107M101 148h75" fill="none" stroke="#faf7ef" stroke-width="10" stroke-linecap="round"/>
+<rect x="44" y="177" width="36" height="36" rx="8" fill="#a9c8bb"/>
+<path d="M101 185h107M101 206h56" fill="none" stroke="#faf7ef" stroke-width="10" stroke-linecap="round"/>
+</g></svg>

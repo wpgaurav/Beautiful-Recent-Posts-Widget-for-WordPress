@@ -1,0 +1,12 @@
+{
+  "name": "beautiful-recent-posts-widget",
+  "version": "5.0.0-beta.1",
+  "private": true,
+  "description": "Development checks for Beautiful Recent Posts; no runtime npm dependencies.",
+  "license": "GPL-2.0-or-later",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "check": "node --check blocks/recent-posts/editor.js && node --test tests/editor.test.mjs",
+    "package": "python3 scripts/package.py"
+  }
+}

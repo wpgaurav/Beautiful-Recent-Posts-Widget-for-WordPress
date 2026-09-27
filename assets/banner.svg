@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1544 500" role="img" aria-labelledby="banner-title banner-desc">
+<title id="banner-title">Beautiful Recent Posts Widget</title><desc id="banner-desc">Give your next great read a place to shine. A quiet editorial identity in cream and teal with a highlighted story list.</desc>
+<rect width="1544" height="500" fill="#f7f4eb"/>
+<g id="wordmark" fill="#123f3a" font-family="Helvetica Neue, Arial, sans-serif">
+<text x="72" y="81" font-size="21" letter-spacing="4">A LITTLE SPACE. MORE DISCOVERY.</text>
+<text x="68" y="194" font-size="78" font-weight="700" letter-spacing="-3">Beautiful</text>
+<text x="68" y="281" font-size="78" font-weight="700" letter-spacing="-3">Recent Posts</text>
+<text x="72" y="348" font-size="28" fill="#425c53">Give your next great read a place to shine.</text>
+<path d="M72 395h640" stroke="#c9d1c4"/>
+<text x="72" y="438" font-size="22">WIDGET + BLOCK</text>
+<text x="712" y="438" font-size="22" text-anchor="end">BY GAURAV TIWARI</text>
+</g>
+<g id="story-list">
+<path d="M890 0h654v500H890z" fill="#123f3a"/>
+<path d="M890 0h16v500h-16z" fill="#f1cc76"/>
+<rect x="984" y="68" width="458" height="130" rx="16" fill="#faf7ef"/>
+<rect x="1008" y="92" width="82" height="82" rx="12" fill="#f1cc76"/>
+<path d="M1027 149l18-27 24 27" fill="none" stroke="#123f3a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1066" cy="112" r="6" fill="#123f3a"/>
+<path d="M1118 114h288M1118 139h232" stroke="#123f3a" stroke-width="10" stroke-linecap="round"/>
+<path d="M1118 167h90" stroke="#7e9184" stroke-width="6" stroke-linecap="round"/>
+<g fill="#a9c8bb"><rect x="1008" y="238" width="64" height="64" rx="10"/><rect x="1008" y="351" width="64" height="64" rx="10"/></g>
+<g fill="none" stroke="#faf7ef" stroke-width="9" stroke-linecap="round"><path d="M1100 252h294M1100 275h221M1100 365h266M1100 388h188"/></g>
+<path d="M984 327h458" stroke="#427168"/>
+</g></svg>

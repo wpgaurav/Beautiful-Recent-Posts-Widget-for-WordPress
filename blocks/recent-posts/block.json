@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "brpw/recent-posts",
+  "version": "5.0.0-beta.1",
+  "title": "Beautiful Recent Posts",
+  "category": "widgets",
+  "description": "Give your next great read a place to shine with recent stories, thumbnails and flexible layouts.",
+  "keywords": ["recent", "posts", "sidebar"],
+  "textdomain": "beautiful-recent-posts-widget",
+  "attributes": {
+    "title": { "type": "string", "default": "" },
+    "totalnews": { "type": "number", "default": 3 },
+    "category": { "type": "number", "default": 0 },
+    "orderby": { "type": "string", "default": "date", "enum": ["date", "modified", "title"] },
+    "layout": { "type": "string", "default": "list", "enum": ["list", "cards"] },
+    "image_shape": { "type": "string", "default": "circle", "enum": ["circle", "rounded", "square"] },
+    "show_image": { "type": "boolean", "default": true },
+    "show_date": { "type": "boolean", "default": true },
+    "show_author": { "type": "boolean", "default": false },
+    "show_comments": { "type": "boolean", "default": true },
+    "show_excerpt": { "type": "boolean", "default": false },
+    "exclude_current": { "type": "boolean", "default": false },
+    "excerpt_length": { "type": "number", "default": 20 },
+    "textbutton": { "type": "string", "default": "" },
+    "pageid": { "type": "number", "default": 0 }
+  },
+  "usesContext": ["postId"],
+  "supports": { "html": false, "align": ["wide", "full"], "spacing": { "margin": true, "padding": true } },
+  "editorScript": "brpw-editor",
+  "style": "beautiful-recent-posts-style",
+  "render": "file:./render.php"
+}

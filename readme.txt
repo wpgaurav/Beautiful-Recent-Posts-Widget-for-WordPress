@@ -1,53 +1,96 @@
 === Beautiful Recent Posts Widget ===
 Contributors: gauravtiwari
-Donate link: http://gauravtiwari.org/donate/
-Tags: widget, recent posts, sidebar, thumbnails, featured image
-Requires at least: 5.0
-Tested up to: 6.4
-Requires PHP: 7.0
-Stable Tag: 4.1
+Donate link: https://buymeacoffee.com/gauravtiwari
+Tags: recent posts, widget, thumbnails, block, sidebar
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 5.0.0-beta.1
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Beautiful Recent Posts Widget (BRPW) is a clean minimal sidebar widget to showcase your recent articles in a beautiful way with featured images.
+Give your next great read a place to shine. Recent posts with thumbnails, list and card layouts, a native block, and a classic widget.
 
 == Description ==
 
-* Lightweight and minimal design
-* Modern WordPress standards compliant
-* Conditional CSS loading for better performance
-* Displays post thumbnails with retina support
-* Customize number of posts to display
-* Optional "Read More" button with custom text
-* Link button to any page
-* Shows post date and comment count
-* Supports all post formats
-* Fully responsive design
+Beautiful Recent Posts makes it easy to help readers find another story. Add it to a sidebar, a page, or a block-theme template. Its typography and colors inherit from your theme.
+
+* Native Beautiful Recent Posts block with a live preview.
+* Classic widget that preserves existing widget settings.
+* Shortcode for content and template integrations.
+* Editorial list and responsive card layouts.
+* Circle, rounded, or square list thumbnails.
+* Category filtering and newest, recently updated, or alphabetical ordering.
+* Display 1–20 posts; optionally exclude the current post.
+* Optional date, author, comments, and 5–60 word excerpts.
+* WordPress responsive images, lazy loading, and semantic dates.
+* Optional button linking to a published page.
+* Keyboard focus styles and support for right-to-left layouts.
+* No frontend JavaScript, external fonts, tracking, or remote service requests.
+
+This is a development beta. Test it on a staging site before upgrading a production site.
 
 == Installation ==
 
-1. Install to /wp-content/plugins/ folder or upload through Dashboard → Plugins → Add New
-2. Activate the plugin
-3. Regenerate thumbnails (recommended)
-4. Go to Appearance → Widgets and drag Beautiful Recent Posts widget to a sidebar
-5. Configure the widget settings as desired
+1. Upload the plugin ZIP through Plugins → Add New → Upload Plugin.
+2. Activate Beautiful Recent Posts Widget.
+3. Insert the Beautiful Recent Posts block in the editor or Site Editor. For classic themes, use Appearance → Widgets.
+4. Choose your layout, category, and display details.
+5. Optionally regenerate existing thumbnails for the 85px and 170px square crops. New uploads generate these automatically.
+
+== Frequently Asked Questions ==
+
+= Will my existing widgets survive the update? =
+
+Yes. The original widget ID, title, post count, button label, and destination are retained. Dates, comments, and circular images stay enabled by default. The styling is refreshed, so review any custom CSS on staging.
+
+= Can I use it without a widget area? =
+
+Yes. Insert the native block in a page, post, or Site Editor template. Or use [beautiful_recent_posts totalnews="4" layout="cards" show_excerpt="true"].
+
+= How do I filter posts? =
+
+Select a category in the widget or block. For shortcodes, use a category ID: [beautiful_recent_posts category="12" exclude_current="true"]. Category filtering includes child categories.
+
+= Does it show private or password-protected posts? =
+
+No. It displays published, non-password-protected posts only. The optional button also requires a public, non-password-protected page.
+
+= Does it load JavaScript on my site? =
+
+No. The editor uses JavaScript supplied by WordPress; the public post lists are server-rendered HTML and CSS. Active classic widgets enqueue a small shared stylesheet before the page head; blocks and shortcodes load it when rendered.
+
+= What does the date mean when I sort by recently updated? =
+
+Sorting uses the last-modified date. The displayed date remains the original publication date.
 
 == Changelog ==
 
+= 5.0.0-beta.1 =
+* New teal editorial branding, SVG icon, and standard/retina directory banners.
+* Added a native block, shortcode, list/card layouts, category and ordering controls.
+* Added optional author, excerpt, thumbnail shape, metadata, and current-post exclusion.
+* Preserved saved classic widget IDs and original settings.
+* Replaced unused data-retina markup with native responsive images.
+* Bounded and sanitized settings; excluded private and password-protected content.
+* Added PHP integration tests, JavaScript checks, CI, and reproducible ZIP packaging.
+* Raised minimum requirements to WordPress 6.6 and PHP 7.4.
+* Standardized the translation domain to beautiful-recent-posts-widget for directory language packs.
+
 = 4.1 =
-* Updated to latest WordPress coding standards
-* Implemented conditional CSS loading for better performance
-* Improved security with proper escaping and sanitization
-* Added retina support for thumbnails
-* Code cleanup and modernization
+* Updated WordPress coding standards, escaping, and sanitization.
+* Added conditional CSS loading and retina image sizes.
 
 = 4.0 =
-* Major code refactoring
-* Improved performance
-* WordPress 5.0+ compatibility
+* Major code refactoring and WordPress 5.0+ compatibility.
 
 = 1.1 =
-* Minified CSS & performance improvements
+* Minified CSS and performance improvements.
 
 = 1.0 =
-* Initial Release
+* Initial release.
+
+== Upgrade Notice ==
+
+= 5.0.0-beta.1 =
+Development beta. Requires WordPress 6.6+ and PHP 7.4+. Existing widgets are retained; review the refreshed styling on staging.
