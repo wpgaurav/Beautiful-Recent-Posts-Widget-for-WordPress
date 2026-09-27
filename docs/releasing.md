@@ -55,7 +55,7 @@ The run validates versions, tests the selected commit, and uploads `release-bund
 
 ## Publish when the version is approved
 
-After the release changes have been merged and checks have passed, create the version tag on the reviewed commit and publish a GitHub Release for that tag. For example, for a future stable 5.0.0:
+After the release changes have been merged and checks have passed, create the version tag on the reviewed commit and publish a GitHub Release for that tag. For example, for stable 5.0.0:
 
 ```sh
 git tag -a v5.0.0 <reviewed-commit-sha> -m 'Beautiful Recent Posts 5.0.0'
@@ -86,6 +86,6 @@ GitHub publication and WordPress.org deployment are separate jobs. A successful 
 
 ## Current rollout
 
-The source is still **5.0.0-beta.1**. Installing and dry-running this workflow does not publish that beta or change the existing WordPress.org release.
+The source is now **5.0.0**. Publishing the matching stable GitHub Release activates both publication jobs after the quality gates pass. The beta was never published.
 
 The workflow was installed through [PR #3](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/pull/3). The [first GitHub dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed all eight matrix jobs and built the release bundle. The downloaded bundle was independently verified against the tested source. GitHub publication and WordPress.org deployment were both skipped. There were still zero release tags/releases, and SVN trunk remained at last-changed revision `1048824`. SVN authentication and a real commit intentionally remain unexercised until a stable release is published.

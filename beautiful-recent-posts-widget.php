@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Beautiful Recent Posts Widget
  * Plugin URI: https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress
- * Version: 5.0.0-beta.1
+ * Version: 5.0.0
  * Description: Give your next great read a place to shine. Recent posts with thumbnails, flexible layouts, a block, and a classic widget.
  * Author: Gaurav Tiwari
  * Author URI: https://gauravtiwari.org
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'BRPW_PLUGIN_URI', plugins_url( '', __FILE__ ) );
-define( 'BRPW_VERSION', '5.0.0-beta.1' );
+define( 'BRPW_VERSION', '5.0.0' );
 
 require_once __DIR__ . '/includes/render.php';
 require_once __DIR__ . '/includes/class-brp-widget.php';

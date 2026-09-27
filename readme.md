@@ -4,7 +4,7 @@
 
 Give your next great read a place to shine. A lightweight WordPress plugin with a native block, a classic widget, and a shortcode.
 
-**5.0.0-beta.1 is a local development candidate, not a published release.** Requires WordPress 6.6+ and PHP 7.4+. Use a currently supported PHP version on production sites.
+**Version 5.0.0.** Requires WordPress 6.6+ and PHP 7.4+. Use a currently supported PHP version on production sites.
 
 ## What changed
 

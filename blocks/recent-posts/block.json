@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "brpw/recent-posts",
-  "version": "5.0.0-beta.1",
+  "version": "5.0.0",
   "title": "Beautiful Recent Posts",
   "category": "widgets",
   "description": "Give your next great read a place to shine with recent stories, thumbnails and flexible layouts.",

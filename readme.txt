@@ -5,7 +5,7 @@ Tags: recent posts, widget, thumbnails, block, sidebar
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 5.0.0-beta.1
+Stable tag: 5.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,8 +27,6 @@ Beautiful Recent Posts makes it easy to help readers find another story. Add it 
 * Optional button linking to a published page.
 * Keyboard focus styles and support for right-to-left layouts.
 * No frontend JavaScript, external fonts, tracking, or remote service requests.
-
-This is a development beta. Test it on a staging site before upgrading a production site.
 
 == Installation ==
 
@@ -66,7 +64,7 @@ Sorting uses the last-modified date. The displayed date remains the original pub
 
 == Changelog ==
 
-= 5.0.0-beta.1 =
+= 5.0.0 =
 * New teal editorial branding, SVG icon, and standard/retina directory banners.
 * Added a native block, shortcode, list/card layouts, category and ordering controls.
 * Added optional author, excerpt, thumbnail shape, metadata, and current-post exclusion.
@@ -92,5 +90,5 @@ Sorting uses the last-modified date. The displayed date remains the original pub
 
 == Upgrade Notice ==
 
-= 5.0.0-beta.1 =
-Development beta. Requires WordPress 6.6+ and PHP 7.4+. Existing widgets are retained; review the refreshed styling on staging.
+= 5.0.0 =
+Requires WordPress 6.6+ and PHP 7.4+. Existing widgets are retained; review the refreshed styling on staging.
