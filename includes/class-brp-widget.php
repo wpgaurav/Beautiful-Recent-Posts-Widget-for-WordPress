@@ -78,7 +78,7 @@ class BRP_Widget extends WP_Widget {
 			$numeric = in_array( $key, array( 'totalnews', 'excerpt_length' ), true );
 			?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $label ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="<?php echo $numeric ? 'number' : 'text'; ?>" value="<?php echo esc_attr( $settings[ $key ] ); ?>" 
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="<?php echo $numeric ? 'number' : 'text'; ?>" value="<?php echo esc_attr( $settings[ $key ] ); ?>"
 			<?php
 			if ( $numeric ) :
 				?>
