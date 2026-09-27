@@ -72,7 +72,7 @@ python3 scripts/package.py
 
 **Run the integration suite only on a disposable local site.** It creates temporary fixture posts and categories and removes them afterward. `tests/seed-demo.php` optionally creates persistent demo content on that site.
 
-See [verification](docs/verification.md) for observed results and limitations, and the [Osmium screenshot library](docs/screenshots/README.md) for reusable desktop, mobile, editor and widget captures. CI is configured for PHP 7.4/8.2–8.5, WordPress latest plus minimum 6.6, and Node 24/26. Configured jobs are not proof of a completed remote CI run.
+See [verification](docs/verification.md) for observed results and limitations, and the [Osmium screenshot library](docs/screenshots/README.md) for reusable desktop, mobile, editor and widget captures. CI is configured for PHP 7.4/8.2–8.5, WordPress latest plus minimum 6.6, and Node 24/26. The full configured matrix passed in the [release dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308).
 
 ## Branding and packaging
 

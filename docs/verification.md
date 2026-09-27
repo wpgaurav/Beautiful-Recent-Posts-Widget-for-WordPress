@@ -24,7 +24,7 @@ The integration suite covers settings migration/defaults, bounds and sanitizatio
 
 ## Remaining boundaries
 
-- PHP 7.4, 8.2 and 8.3, minimum WordPress 6.6, and remote GitHub Actions are configured but were not executed during this local run. Do not claim a fully passed remote matrix.
+- The initial local run did not execute PHP 7.4/8.2/8.3 or minimum WordPress 6.6. The subsequent GitHub automation run passed the full configured matrix; see below.
 - Plugin Check flags `post__not_in` as a performance advisory. It contains only one current-post ID, is opt-in, and each query is capped at 20 published posts with pagination totals disabled. There is no unbounded exclusion list.
 - The installed WP-CLI 2.12.0 dependency `react/promise` emits a PHP 8.5 case-semicolon deprecation before plugin execution. No plugin-origin warning/deprecation was raised by the integration handler.
 - WordPress's editor logged a `global-styles-css-custom-properties-inline-css` iframe warning. No plugin JavaScript errors were observed. The in-app browser left the blob iframe blank; Chrome rendered it and was used for the actual editor checks.
@@ -39,3 +39,9 @@ The integration suite covers settings migration/defaults, bounds and sanitizatio
 - Build: `python3 scripts/package.py`. Fixed ZIP timestamps and file permissions make identical source bytes produce the same archive.
 - Directory artwork sizes follow the [WordPress plugin assets requirements](https://developer.wordpress.org/plugins/wordpress-org/plugin-assets/).
 - Current-version references: [WordPress](https://wordpress.org/download/), [PHP releases](https://www.php.net/releases/), [Node releases](https://nodejs.org/en/about/previous-releases).
+
+## GitHub automation follow-up
+
+The [release dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed Node 24/26 and all six WordPress jobs: PHP 7.4/8.2/8.3/8.4/8.5 on latest WordPress, plus PHP 7.4 on WordPress 6.6. Each WordPress job installed the packaged ZIP before running the 36 integration assertions. The 18 Python release-tool tests and four JavaScript behavior tests also passed. Actionlint passed locally.
+
+The release bundle was downloaded and its checksum, runtime files and directory artwork independently verified against the source commit. Both publishing jobs were skipped; no tag, release or SVN commit was created. See [the release guide](releasing.md).

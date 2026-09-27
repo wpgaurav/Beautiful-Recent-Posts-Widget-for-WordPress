@@ -87,3 +87,5 @@ GitHub publication and WordPress.org deployment are separate jobs. A successful 
 ## Current rollout
 
 The source is still **5.0.0-beta.1**. Installing and dry-running this workflow does not publish that beta or change the existing WordPress.org release.
+
+The workflow was installed through [PR #3](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/pull/3). The [first GitHub dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed all eight matrix jobs and built the release bundle. The downloaded bundle was independently verified against the tested source. GitHub publication and WordPress.org deployment were both skipped. There were still zero release tags/releases, and SVN trunk remained at last-changed revision `1048824`. SVN authentication and a real commit intentionally remain unexercised until a stable release is published.
