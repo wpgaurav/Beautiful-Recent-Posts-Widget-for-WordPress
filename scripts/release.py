@@ -14,7 +14,7 @@ import zipfile
 from package import ROOT, SLUG, REQUIRED, build
 
 VERSION_PATTERN = r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(alpha|beta|rc)\.(0|[1-9]\d*))?'
-ARTWORK = ('icon.svg', 'icon-128x128.png', 'icon-256x256.png', 'banner-772x250.png', 'banner-1544x500.png')
+ARTWORK = ('icon.svg', 'icon-128x128.png', 'icon-256x256.png', 'banner-772x250.png', 'banner-1544x500.png', 'screenshot-1.jpg', 'screenshot-2.jpg', 'screenshot-3.jpg', 'screenshot-4.jpg', 'screenshot-5.jpg', 'screenshot-6.jpg', 'screenshot-7.jpg')
 
 
 def field(text, name):

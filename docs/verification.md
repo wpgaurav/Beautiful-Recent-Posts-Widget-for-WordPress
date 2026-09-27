@@ -45,3 +45,9 @@ The integration suite covers settings migration/defaults, bounds and sanitizatio
 The [release dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed Node 24/26 and all six WordPress jobs: PHP 7.4/8.2/8.3/8.4/8.5 on latest WordPress, plus PHP 7.4 on WordPress 6.6. Each WordPress job installed the packaged ZIP before running the 36 integration assertions. The 18 Python release-tool tests and four JavaScript behavior tests also passed. Actionlint passed locally.
 
 The release bundle was downloaded and its checksum, runtime files and directory artwork independently verified against the source commit. Both publishing jobs were skipped; no tag, release or SVN commit was created. See [the release guide](releasing.md).
+
+## Stable release and SVN documentation follow-up
+
+Stable 5.0.0 passed all nine CI jobs, including the added PHP 8.5 multisite job. Single-site integration coverage is now 39 assertions; multisite adds two network-activation checks. [Release run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36321318840).
+
+SVN revision `3715519` published the verified release and branding. Both public download packages initially matched across all 10 files. The subsequent user-requested readme/gallery update is revision `3715522`; only the two SVN readme copies and seven directory screenshots changed. See [releasing.md](releasing.md) for the documented readme-only difference from the immutable GitHub release artifact.

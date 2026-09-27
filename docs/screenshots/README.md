@@ -34,3 +34,11 @@ Osmium is a block theme. The classic-widget screenshot uses [qa-widget-adapter.p
 The plugin's directory icons and banners are in the root `assets/` folder. They are separate from the screenshots and excluded from the runtime ZIP. Reusable screenshots have no browser chrome, capture labels or processing notes baked into the page.
 
 ![Osmium classic widget preview](2026-09-27/osmium-sidebar.jpg)
+
+## WordPress.org publication
+
+All seven Osmium captures were uploaded through SVN revision `3715522` on 27 September 2026. Their directory filenames and readme caption order are: editor (`screenshot-1.jpg`), cards (`screenshot-2.jpg`), sidebar (`screenshot-3.jpg`), mobile (`screenshot-4.jpg`), desktop (`screenshot-5.jpg`), mobile sidebar (`screenshot-6.jpg`), and dark/RTL (`screenshot-7.jpg`). Copies live in the root `assets/` folder so future release workflows retain the gallery.
+
+[Stable directory release capture](2026-09-27/wordpress-org-5.0.0.jpg) records the live branding immediately after the 5.0.0 publication, before the expanded readme/gallery update.
+
+[Live gallery capture](2026-09-27/wordpress-org-gallery.jpg) records the published screenshot section after the SVN update; all seven image URLs were checked against the saved originals.

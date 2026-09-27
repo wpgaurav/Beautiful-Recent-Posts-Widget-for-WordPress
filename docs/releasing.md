@@ -75,7 +75,7 @@ Run the local build from the tagged checkout. A beta/RC release must have both a
 - Immediately before uploading or deploying, the workflow rereads the live GitHub Release and tag. Drafts, replaced releases, changed tags and mismatched prerelease flags fail closed.
 - Existing GitHub assets must match byte-for-byte; the workflow refuses to overwrite different published ZIPs.
 - WordPress.org deployment rejects prereleases and downgrades. The 10up action is pinned to an inspected commit.
-- Deployment sends the standard/retina icons and banners plus `icon.svg` to SVN's top-level `assets/`. Editable `banner.svg` and QA screenshots stay in GitHub.
+- Deployment sends the standard/retina icons and banners plus `icon.svg` to SVN's top-level `assets/`. Editable `banner.svg` stays in GitHub. The seven selected Osmium captures are also deployed as `screenshot-1.jpg` through `screenshot-7.jpg`.
 - After deployment, the workflow exports the SVN tag and directory assets and compares every file with the verified bundle. A pre-existing conflicting SVN tag fails verification rather than being silently treated as success.
 
 ## Failures and retries
@@ -88,4 +88,18 @@ GitHub publication and WordPress.org deployment are separate jobs. A successful 
 
 The source is now **5.0.0**. Publishing the matching stable GitHub Release activates both publication jobs after the quality gates pass. The beta was never published.
 
-The workflow was installed through [PR #3](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/pull/3). The [first GitHub dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed all eight matrix jobs and built the release bundle. The downloaded bundle was independently verified against the tested source. GitHub publication and WordPress.org deployment were both skipped. There were still zero release tags/releases, and SVN trunk remained at last-changed revision `1048824`. SVN authentication and a real commit intentionally remain unexercised until a stable release is published.
+The workflow was installed through [PR #3](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/pull/3). The [first GitHub dry run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36320481308) passed all eight matrix jobs and built the release bundle. The downloaded bundle was independently verified against the tested source. GitHub publication and WordPress.org deployment were both skipped. There were still zero release tags/releases, and SVN trunk remained at last-changed revision `1048824`. At that point SVN authentication and a real commit were still unexercised; the stable release below completed both.
+
+## Stable 5.0.0 publication
+
+Published on 27 September 2026 from tag `v5.0.0`, commit `361e0e7b94aae3b3fdad7ac3265a16a2ab114ebf`. The [release run](https://github.com/wpgaurav/Beautiful-Recent-Posts-Widget-for-WordPress/actions/runs/36321318840) passed all nine quality jobs, uploaded the GitHub ZIP/checksum, and deployed SVN revision `3715519`. The public WordPress.org API and plugin page showed 5.0.0, all 10 initial package files matched the GitHub artifact, and the directory banner/icon bytes matched the source.
+
+The release also preserves the directory's original `BRPWidget.php` entry point. A compatibility migration handles the GitHub-only 4.x activation path. Integration checks passed 39 assertions on single-site and 41 on multisite.
+
+GitHub ZIP SHA-256: `0ff6585eb0bc50f2be8326a3a6cae8d4f14c6f27ffcb9b4f34cd1dd26e99fb94`.
+
+## Directory documentation updates after publication
+
+At the user's request, SVN revision `3715522` updated `trunk/readme.txt` and `tags/5.0.0/readme.txt` using Formatting Extender's documentation structure, and added the seven saved Osmium screenshots to top-level `assets/`. No executable plugin files changed.
+
+The GitHub tag and published ZIP remain the original release artifact. The WordPress.org readme may therefore differ from the original ZIP after this explicitly authorized documentation-only update. Compare executable/runtime files separately from `readme.txt` when auditing it. Do not rerun the original release job expecting a byte-identical full-tree check after a directory-only documentation update, and do not move the GitHub tag or overwrite its published assets to conceal that difference. Future releases will include the current readme and all seven screenshot assets from this checkout.
