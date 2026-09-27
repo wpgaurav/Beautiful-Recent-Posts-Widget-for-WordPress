@@ -1,0 +1,74 @@
+name: Plugin checks
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_call:
+    inputs:
+      ref:
+        description: Exact commit to check
+        required: false
+        type: string
+        default: ''
+permissions:
+  contents: read
+jobs:
+  javascript:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['24', '26']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm run check
+      - name: Release tooling tests
+        run: python3 -m unittest discover -s tests -p "test_*.py"
+      - name: Validate consistent source versions
+        run: python3 scripts/release.py metadata
+  wordpress:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: wordpress
+          MYSQL_DATABASE: wordpress
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -pwordpress"
+          --health-interval=10s --health-timeout=5s --health-retries=5
+    strategy:
+      matrix:
+        php: ['7.4', '8.2', '8.3', '8.4', '8.5']
+        wordpress: ['latest']
+        include:
+          - php: '7.4'
+            wordpress: '6.6'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: wp-cli
+          coverage: none
+          extensions: mysqli, gd
+      - name: Lint PHP
+        run: find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l
+      - name: Install disposable WordPress
+        run: |
+          mkdir /tmp/brpw-wordpress
+          wp core download --path=/tmp/brpw-wordpress --version=${{ matrix.wordpress }}
+          wp config create --path=/tmp/brpw-wordpress --dbname=wordpress --dbuser=root --dbpass=wordpress --dbhost=127.0.0.1:3306
+          wp core install --path=/tmp/brpw-wordpress --url=http://localhost --title=BRPW --admin_user=admin --admin_password=local-ci-only --admin_email=qa@example.org --skip-email
+          python3 scripts/package.py
+          wp plugin install "$GITHUB_WORKSPACE"/dist/beautiful-recent-posts-widget-*.zip --activate --path=/tmp/brpw-wordpress
+      - name: Integration tests
+        run: wp eval-file "$GITHUB_WORKSPACE/tests/integration.php" --path=/tmp/brpw-wordpress

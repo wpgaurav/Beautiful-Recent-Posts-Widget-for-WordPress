@@ -1,0 +1,51 @@
+{
+  "version": "5.0.0-beta.1",
+  "date": "2026-09-27",
+  "wordpress": "7.1.2",
+  "theme": "Osmium 0.4.2",
+  "source": "Local synthetic demo; not a production deployment",
+  "screenshots": [
+    {
+      "file": "osmium-cards.jpg",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a1ad2a295a0f83149a690b5ac0fdb31dfdbf3812e5a52207ca41ac3ba6ed5e86"
+    },
+    {
+      "file": "osmium-dark-rtl.jpg",
+      "width": 1720,
+      "height": 1522,
+      "sha256": "a9933f3d22508a987f16da9730ae000c615147954fb9303e259ee1473207451f"
+    },
+    {
+      "file": "osmium-desktop.jpg",
+      "width": 1440,
+      "height": 2145,
+      "sha256": "972b9ea29897e0d185ca012566bf64fa496d0a7aa3e6f059bf0f4defe8aa29c3"
+    },
+    {
+      "file": "osmium-editor.jpg",
+      "width": 1720,
+      "height": 1014,
+      "sha256": "f791ecebc2e692b836b6681847ef0500e304917bfcc15a3001988b1fbcc55ef3"
+    },
+    {
+      "file": "osmium-mobile.jpg",
+      "width": 390,
+      "height": 3053,
+      "sha256": "727839fe61e4086b2ec4ec8c14729d8a2c1e052749a436752999a2b39b141521"
+    },
+    {
+      "file": "osmium-sidebar-mobile.jpg",
+      "width": 390,
+      "height": 1743,
+      "sha256": "0231773bfb094278fd47b2d7f68d21175eaa71db243f14b4df0f6b93f7774ed0"
+    },
+    {
+      "file": "osmium-sidebar.jpg",
+      "width": 1440,
+      "height": 1464,
+      "sha256": "fc69a4a6343c0ea878f4519d9a57e50f87bf6689120246dbb6217138668d06d1"
+    }
+  ]
+}

@@ -103,3 +103,11 @@ debug.log
 *.bak
 *.backup
 *.old
+
+# Local verification artifacts and installable packages.
+/dist/
+/test-results/
+
+# Release verification scratch.
+/.release/
+__pycache__/
